@@ -6,10 +6,13 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "antd": "^5.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.0"
+    "redux": "^4.2.1",
+    "web-vitals": "^2.1.0",
+    "yarn": "^1.22.19"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,11 +36,11 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "jest": {
-      "transformIgnorePatterns": [
-        "/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$"
-      ]
-    }
+    ]
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$"
+    ]
   }
 }
