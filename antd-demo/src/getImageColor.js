@@ -9,8 +9,9 @@ import quantize from "quantize"
 // const demoPath = "https://fastly.picsum.photos/id/13/200/300.jpg?hmac=UHtWCvsKxIfcA_gIse7Rc6MH6nI3OGl0dzaCSSsYqas";
 //png
 // const demoPath = "https://raw.githubusercontent.com/scijs/get-pixels/master/test/test_pattern.png";
+const demoPath ="./pics/instergram.png"
 //gif
-const demoPath = "https://media.giphy.com/media/duzpaTbCUy9Vu/giphy.gif"
+// const demoPath = "./pics/gifdemo.gif"
 
 /**
 * Get image pixels array by get-pixels
@@ -47,11 +48,14 @@ const createPixelArray = (imgData, pixelCount, quality) => {
         b = pixels[offset + 2];
         a = pixels[offset + 3];
 
-        // not white
-        // if (!(r > 250 && g > 250 && b > 250)) {
-            pixelArray.push([r, g, b]);
-        // }
-        
+        // pixel: mostly opaque
+        // ==> aim to get rid of the influence of transparent bg of png
+        if (typeof a === 'undefined' || a >= 125) {
+
+            // if (!(r > 250 && g > 250 && b > 250)) {
+                pixelArray.push([r, g, b]);
+            // }
+        }
     }
     return pixelArray;
 }
