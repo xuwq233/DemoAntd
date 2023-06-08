@@ -1,6 +1,5 @@
 {
   "name": "antd-demo",
-  "type": "module",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -47,5 +46,10 @@
     "transformIgnorePatterns": [
       "/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$"
     ]
+  },
+  "devDependencies": {
+    "@types/get-pixels": "^3.3.2",
+    "@types/quantize": "^1.0.0",
+    "ts-node": "^10.9.1"
   }
 }
